@@ -1,0 +1,38 @@
+{
+  "name": "aws-simpledb-query-builder",
+  "version": "1.0.0",
+  "description": "A working, tested implementation for building SQL-like simpledb select queries",
+  "main": "index.js",
+  "type": "index.d.ts",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "npm run clean && tsc",
+    "lint": "tslint src/**/*.ts test/**/*.ts",
+    "test": "mocha --compilers ts:ts-node/register test/**/*_T.ts",
+    "dist": "npm run lint && npm run test && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xunnanxu/aws-simpledb-query-builder.git"
+  },
+  "keywords": [
+    "aws",
+    "simpledb",
+    "sql",
+    "query"
+  ],
+  "author": "Shawn Xu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xunnanxu/aws-simpledb-query-builder/issues"
+  },
+  "homepage": "https://github.com/xunnanxu/aws-simpledb-query-builder#readme",
+  "devDependencies": {
+    "@types/mocha": "^2.2.43",
+    "chai": "^4.1.2",
+    "mocha": "^3.5.2",
+    "ts-node": "^3.3.0",
+    "tslint": "^5.7.0",
+    "typescript": "^2.5.2"
+  }
+}
