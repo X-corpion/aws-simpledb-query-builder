@@ -3,10 +3,12 @@ This is a tested, working query builder that supports the current spec of simple
 
 ## How to use
 
+### Quick start
+
 #### TypeScript example:
 
 ```typescript
-import { Order, Predicate, Query } aws-node-query-builder';
+import { Order, Predicate, Query } from 'aws-node-query-builder';
 
 Query.select('foo')
   .from('bar')
@@ -43,3 +45,33 @@ qb.Query.select('foo')
 // select `foo` from `bar` where (`baz` != 'a') and (`qux` = 'b' or `qux` = 'c') order by itemName() desc limit 10
 
 ```
+
+### Supported queries
+
+`and([predicate1, predicate2...])`
+
+`or([predicate1, predicate2...])`
+
+`not(predicate)   // not(predicate)`
+
+`intersect([predicate1, predicate2...])`
+
+`every(predicate) // every(attr)...`
+
+`eq(attr, value)  // attr = value`
+
+`ne(attr, value)  // attr != value`
+
+`like(attr, value)  // attr like value`
+
+`notLike(attr, value)  // attr not like value`
+
+`between(attr, lb, ub)  // attr between lb and ub`
+
+`isNull(attr)  // is null`
+
+`notNull(attr) // is not null`
+
+`isNull(attr)  // is null`
+
+`valueIn(attr, [value1, value2...])  // attr in (value1, value2...)`
