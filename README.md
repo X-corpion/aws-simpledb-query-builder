@@ -19,7 +19,7 @@ Query.select('foo')
           Predicate.eq('qux', 'c'),
       ])
   ]))
-  .orderBy('itemName()', qb.Order.DESC)
+  .orderBy('itemName()', Order.DESC)
   .limit(10)
   .toQueryString();
 // select `foo` from `bar` where (`baz` != 'a') and (`qux` = 'b' or `qux` = 'c') order by itemName() desc limit 10
