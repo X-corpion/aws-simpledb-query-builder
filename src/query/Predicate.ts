@@ -14,8 +14,8 @@ export abstract class Predicate {
     return new NotPredicate(predicate);
   }
 
-  public static intersect(first: Predicate, second: Predicate): IntersectPredicate {
-    return new IntersectPredicate(first, second);
+  public static intersect(predicates: Predicate[]): IntersectPredicate {
+    return new IntersectPredicate(predicates);
   }
 
   public static eq(attribute: string, value: string): SimplePredicate {
@@ -109,8 +109,8 @@ export class OrPredicate extends JointPredicate {
 }
 
 export class IntersectPredicate extends JointPredicate {
-  constructor(first: Predicate, second: Predicate) {
-    super([first, second], 'intersection', true);
+  constructor(predicates: Predicate[]) {
+    super(predicates, 'intersection', true);
   }
 }
 

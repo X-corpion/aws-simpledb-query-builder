@@ -95,13 +95,13 @@ describe('Query', () => {
       const query = Query.select()
           .from('foo')
           .where(
-              Predicate.intersect(
+              Predicate.intersect([
                 Predicate.or([
                   Predicate.lt('a', '1'),
                   Predicate.gt('c', '2')
                 ]),
                 Predicate.eq('a', '2')
-              )
+              ])
           )
           .limit(10)
           .toQueryString();
