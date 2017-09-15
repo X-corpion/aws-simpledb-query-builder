@@ -1,6 +1,6 @@
 {
   "name": "aws-simpledb-query-builder",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A working, tested implementation for building SQL-like simpledb select queries",
   "main": "dist/index.js",
   "type": "dist/index.d.ts",
