@@ -105,7 +105,8 @@ describe('Query', () => {
           )
           .limit(10)
           .toQueryString();
-      expect(query).to.equal('select * from `foo` where (`a` < \'1\' or `c` > \'2\') intersection (`a` = \'2\') limit 10');
+      expect(query).to.equal(
+          'select * from `foo` where (`a` < \'1\' or `c` > \'2\') intersection (`a` = \'2\') limit 10');
     });
 
   });

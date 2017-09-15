@@ -11,8 +11,8 @@ class Predicate {
     static not(predicate) {
         return new NotPredicate(predicate);
     }
-    static intersect(first, second) {
-        return new IntersectPredicate(first, second);
+    static intersect(predicates) {
+        return new IntersectPredicate(predicates);
     }
     static eq(attribute, value) {
         return new SimplePredicate(attribute, `= ${Helpers_1.wrapValue(value)}`);
@@ -86,8 +86,8 @@ class OrPredicate extends JointPredicate {
 }
 exports.OrPredicate = OrPredicate;
 class IntersectPredicate extends JointPredicate {
-    constructor(first, second) {
-        super([first, second], 'intersect', true);
+    constructor(predicates) {
+        super(predicates, 'intersection', true);
     }
 }
 exports.IntersectPredicate = IntersectPredicate;

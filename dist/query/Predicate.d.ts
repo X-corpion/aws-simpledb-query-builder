@@ -2,7 +2,7 @@ export declare abstract class Predicate {
     static and(predicates: Predicate[]): AndPredicate;
     static or(predicates: Predicate[]): OrPredicate;
     static not(predicate: Predicate): NotPredicate;
-    static intersect(first: Predicate, second: Predicate): IntersectPredicate;
+    static intersect(predicates: Predicate[]): IntersectPredicate;
     static eq(attribute: string, value: string): SimplePredicate;
     static ne(attribute: string, value: string): SimplePredicate;
     static gt(attribute: string, value: string): SimplePredicate;
@@ -32,7 +32,7 @@ export declare class OrPredicate extends JointPredicate {
     constructor(predicates: Predicate[]);
 }
 export declare class IntersectPredicate extends JointPredicate {
-    constructor(first: Predicate, second: Predicate);
+    constructor(predicates: Predicate[]);
 }
 export declare class NotPredicate extends Predicate {
     private predicate;
