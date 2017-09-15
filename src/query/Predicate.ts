@@ -110,7 +110,7 @@ export class OrPredicate extends JointPredicate {
 
 export class IntersectPredicate extends JointPredicate {
   constructor(first: Predicate, second: Predicate) {
-    super([first, second], 'intersect', true);
+    super([first, second], 'intersection', true);
   }
 }
 
